@@ -16,7 +16,13 @@ config/features=PackedStringArray("4.2", "Forward Plus")
 
 [display]
 
+window/size/viewport_width=576
+window/size/viewport_height=324
 window/stretch/mode="viewport"
+
+[dotnet]
+
+project/assembly_name="platformer"
 
 [input]
 
@@ -39,3 +45,5 @@ jump={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

@@ -1,11 +1,12 @@
 extends CharacterBody2D
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -500.0
+const SPEED = 150.0
+const JUMP_VELOCITY = -300.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var on_floor
-
-@onready var _animaiton = $AnimatedSprite2D
+var landed
+var jump_progress
+@onready var _animation = $AnimatedSprite2D
 
 func _physics_process(delta):
 	on_floor = is_on_floor()
@@ -28,18 +29,37 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _process(delta):
-	if Input.is_action_pressed("move_left") and on_floor:
-		_animaiton.flip_h = false
-		_animaiton.play("walking")
-	elif Input.is_action_pressed("move_right") and on_floor:
-		_animaiton.flip_h = true
-		_animaiton.play("walking")
+	var left = Input.is_action_pressed("move_left")
+	var right = Input.is_action_pressed("move_right")
+	if left:
+		_animation.flip_h = false
+	elif right:
+		_animation.flip_h = true
+	
+	if _animation.animation =="landing" and _animation.frame_progress == 1:
+		landed = true
+	if _animation.animation =="jumping" and _animation.frame_progress == 1 and not on_floor:
+		_animation.frame = 10
+		
+		
+	if left and on_floor:
+		_animation.play("walking")
+	elif right and on_floor:
+		
+		_animation.play("walking")
 	elif Input.is_action_pressed("jump") and not on_floor:
-		_animaiton.play("jumping")
-	else:
-		_animaiton.stop()
-
-
+		_animation.play("jumping")
+		landed = false
+	elif not on_floor:
+		_animation.play("jumping")
+		landed = false
+	elif on_floor and landed==false:
+		_animation.play("landing")
+	elif on_floor and landed:
+		_animation.play("idle")
+	
+	
+		
 
 
 
