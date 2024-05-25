@@ -57,9 +57,8 @@ func _process(delta):
 		_animation.play("landing")
 	elif on_floor and landed:
 		_animation.play("idle")
-	
-	
-		
+	elif right and left:
+		_animation.play("idle")
 
 
 
