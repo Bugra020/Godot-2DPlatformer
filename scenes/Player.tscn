@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://dkd81oin02sc4"]
+[gd_scene load_steps=53 format=3 uid="uid://dkd81oin02sc4"]
 
 [ext_resource type="Texture2D" uid="uid://7voasw61mcl5" path="res://assets/red hood Sheet.png" id="1_8v677"]
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_v2uoe"]
@@ -82,6 +82,22 @@ region = Rect2(224, 532, 112, 133)
 [sub_resource type="AtlasTexture" id="AtlasTexture_inmtb"]
 atlas = ExtResource("1_8v677")
 region = Rect2(336, 532, 112, 133)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hgki8"]
+atlas = ExtResource("1_8v677")
+region = Rect2(448, 532, 112, 133)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_310dm"]
+atlas = ExtResource("1_8v677")
+region = Rect2(560, 532, 112, 133)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y7xl1"]
+atlas = ExtResource("1_8v677")
+region = Rect2(672, 532, 112, 133)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_024bw"]
+atlas = ExtResource("1_8v677")
+region = Rect2(784, 532, 112, 133)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0rjp0"]
 atlas = ExtResource("1_8v677")
@@ -257,6 +273,23 @@ animations = [{
 "name": &"landing",
 "speed": 12.0
 }, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hgki8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_310dm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y7xl1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_024bw")
+}],
+"loop": true,
+"name": &"sliding",
+"speed": 5.0
+}, {
 "frames": [],
 "loop": true,
 "name": &"stop_run",
@@ -354,7 +387,7 @@ shape = SubResource("CapsuleShape2D_xdn0p")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, -32)
 sprite_frames = SubResource("SpriteFrames_pjvl3")
-animation = &"idle"
+animation = &"sliding"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(90, -33.5)
