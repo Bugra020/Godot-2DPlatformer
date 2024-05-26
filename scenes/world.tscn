@@ -3,11 +3,11 @@
 [ext_resource type="Script" path="res://scenes/world.gd" id="1_5hi3c"]
 [ext_resource type="PackedScene" uid="uid://dkd81oin02sc4" path="res://scenes/Player.tscn" id="1_unlnp"]
 [ext_resource type="Texture2D" uid="uid://6np7wdv2aay5" path="res://assets/DarkForest1.2/env_ground.png" id="2_3w6e8"]
-[ext_resource type="Texture2D" uid="uid://b03chn6tob5qn" path="res://assets/DarkForest1.2/main_background.png" id="3_r4i5f"]
 [ext_resource type="Texture2D" uid="uid://cydjau3lpvkuu" path="res://assets/DarkForest1.2/wood_env.png" id="4_hhlde"]
 [ext_resource type="Texture2D" uid="uid://dwlqs83hvf4go" path="res://assets/DarkForest1.2/castle_env.png" id="5_x8euk"]
 [ext_resource type="Texture2D" uid="uid://b8khgg0q45bm7" path="res://assets/DarkForest1.2/env_mon.png" id="6_crpfd"]
 [ext_resource type="Texture2D" uid="uid://v7drs655yek6" path="res://assets/DarkForest1.2/env_rock.png" id="7_wilrh"]
+[ext_resource type="Texture2D" uid="uid://dvcwfnvraagtd" path="res://assets/DarkForest1.2/Background_0.png" id="8_ufcut"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_kl5ya"]
 tile_data = PackedInt32Array(131072, 327680, 15, 196608, 327680, 4, 262144, 327680, 5, 327680, 458752, 9, 65537, 393216, 14, 131073, 393216, 15, 196609, 393216, 4, 262145, 393216, 5, 327681, 393216, 6, 65538, 458752, 14, 131074, 1310720, 20, 196610, 1310720, 20, 262146, 1310720, 20, 327682, 1310720, 20, 3, 524288, 13, 65539, 524288, 16, 131075, 1310720, 20, 196611, 1310720, 20, 262147, 1310720, 20, 327683, 1310720, 20, 4, 917504, 15, 65540, 589824, 16, 131076, 1310720, 20, 196612, 1310720, 20, 262148, 1310720, 20, 327684, 1310720, 20, 5, 524288, 15, 65541, 524288, 16, 131077, 1310720, 20, 196613, 1310720, 20, 262149, 1310720, 20, 327685, 1310720, 20)
@@ -11990,14 +11990,12 @@ layer_0/tile_data = PackedInt32Array(1900666, 851968, 2, 1966202, 851968, 5, 203
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 z_index = -406
 motion_scale = Vector2(0, 0)
-metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 z_index = -4096
-position = Vector2(287.5, 162.75)
-scale = Vector2(0.563476, 0.573785)
-texture = ExtResource("3_r4i5f")
-metadata/_edit_lock_ = true
+position = Vector2(289, 163.826)
+scale = Vector2(0.755208, 0.789296)
+texture = ExtResource("8_ufcut")
 
 [node name="CaveBackGround" type="TileMap" parent="."]
 z_index = -4096
